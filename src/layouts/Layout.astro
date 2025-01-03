@@ -27,20 +27,28 @@ const { description, title } = Astro.props
   </head>
 
   <body class="relative text-black dark:text-white">
-    <div
-      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-black
-      bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
-      dark:bg-none"
-    >
-      <!-- Fondo para modo noche -->
-      <div class="hidden dark:block relative h-full w-full">
-        <div class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
-        <div class="absolute left-0 right-0 top-[-10%] h-[1000px] w-[1000px] rounded-full bg-[radial-gradient(circle_400px_at_50%_300px,#fbfbfb36,#000)]"></div>
+    <!-- Fondo dinámico para modos claro y oscuro -->
+    <div class="absolute inset-0 -z-10 min-h-screen w-full">
+      <!-- Modo claro -->
+      <div
+        class="bg-gray-50 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))] 
+        dark:hidden"
+      ></div>
+      <!-- Modo oscuro -->
+      <div
+        class="hidden h-full w-full bg-slate-950 dark:block"
+      >
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"></div>
       </div>
     </div>
+
+    <!-- Contenido principal -->
     <Header />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <Footer />
+
     <style is:global>
       :root {
         color-scheme: light dark;
@@ -82,21 +90,18 @@ const { description, title } = Astro.props
         to {
           backdrop-filter: blur(20px);
           border-width: 1px;
-          border-color: rgba(0, 0, 0);
+          border-color: rgba(0, 0, 0, 0.2);
           padding: 0.25rem 0.75rem;
           display: flex;
           flex-direction: row;
           align-items: center;
-          background-color: rgb(229, 229, 229);
+          background-color: rgba(229, 229, 229, 0.8);
           border-radius: 9999px;
         }
       }
 
       @media (prefers-color-scheme: dark) {
         @keyframes blur {
-          from {
-            border: 0px;
-          }
           to {
             box-shadow:
               0px 5px 50px -5px rgba(0, 0, 0, 0.1),
@@ -104,15 +109,11 @@ const { description, title } = Astro.props
             background: rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(20px);
             border-width: 1px;
-            border-color: rgba(0, 0, 0);
-            padding-left: 0.75rem;
-            padding-right: 0.75rem;
-            padding-top: 0.25rem;
-            padding-bottom: 0.25rem;
+            border-color: rgba(0, 0, 0, 0.3);
+            padding: 0.25rem 0.75rem;
             display: flex;
             flex-direction: row;
             align-items: center;
-            background-color: rgba(0, 0, 0, 0.3);
             border-radius: 9999px;
           }
         }

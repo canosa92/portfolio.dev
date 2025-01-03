@@ -1,5 +1,5 @@
 ---
-const personalImageAlt = "Miguel Ángel"
+const personalImageAlt = "Adrian Canosa"
 import Badge from "@/components/Badge.astro"
 import LinkedInIcon from "@/components/icons/LinkedIn.astro"
 import MailIcon from "@/components/icons/Mail.astro"
@@ -7,15 +7,15 @@ import SocialPill from "@/components/SocialPill.astro"
 import GithubIcon from "@/components/icons/GitHub.astro"
 ---
 
-<div class="max-w-xl">
+<div class="relative max-w-xl">
   <div class="flex gap-4 mb-4">
     <img
       class="rounded-full shadow-lg size-16"
       src="/midudev.webp"
       alt={personalImageAlt}
     />
-    <a
-      href="https://linkedin.com/in/adrian-canosa"
+    
+       <a href="https://linkedin.com/in/adrian-canosa"
       target="_blank"
       rel="noopener"
       class="flex items-center transition md:justify-center md:hover:scale-105"
@@ -26,15 +26,14 @@ import GithubIcon from "@/components/icons/GitHub.astro"
   <h1
     class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
   >
-    Hola,soy Adrián Canosa
+    Hola, soy Adrián Canosa
   </h1>
   <p
     class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
   >
-  <strong>Desarrollador FullStack</strong> 
-  recientemente graduado de The Bridge | Digital Talent Accelerator, 
-  donde he consolidado habilidades técnicas en el desarrollo de aplicaciones web utilizando el <strong>stack MERN</strong>
-   (MongoDB, Express, React y Node.js) y bases de datos como Firebase.
+    <strong>Desarrollador y programador FullStack</strong> 
+    con experiencia en el desarrollo de aplicaciones web utilizando
+    tecnologias como <strong>ASTRO, TYPESCRIPT, FIREBASE y el stack MERN</strong>.
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href="mailto:adrian.canosa1992@gmail.com">
@@ -46,10 +45,64 @@ import GithubIcon from "@/components/icons/GitHub.astro"
       LinkedIn
     </SocialPill>
     <SocialPill href="https://github.com/canosa92"> 
-    <GithubIcon class="size-4"/>
-    Github
+      <GithubIcon class="size-4"/>
+      Github
     </SocialPill>
-
-    
   </nav>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 transform">
+    <div class="flex flex-col items-center mt-20 animate-bounce">
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Explora mi trabajo</p>
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        class="h-6 w-6 text-gray-600 dark:text-gray-400"
+        fill="none" 
+        viewBox="0 0 24 24" 
+        stroke="currentColor"
+      >
+        <path 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          stroke-width="2" 
+          d="M19 14l-7 7m0 0l-7-7m7 7V3"
+        />
+      </svg>
+    </div>
+  </div>
 </div>
+
+<style>
+  @keyframes scroll-bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+  }
+
+  .animate-bounce {
+    animation: scroll-bounce 2s infinite;
+  }
+</style>
+
+<script>
+  // Smooth scroll cuando se hace click en el indicador
+  document.querySelector('.animate-bounce')?.addEventListener('click', () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+  });
+
+  // Ocultar el indicador cuando se hace scroll
+  window.addEventListener('scroll', () => {
+    const scrollIndicator = document.querySelector('.animate-bounce');
+    if (window.scrollY > 100) {
+      scrollIndicator?.classList.add('opacity-0', 'pointer-events-none');
+    } else {
+      scrollIndicator?.classList.remove('opacity-0', 'pointer-events-none');
+    }
+  });
+</script>
