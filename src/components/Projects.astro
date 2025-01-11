@@ -1,13 +1,16 @@
 ---
-import GitHub from "@/components/icons/GitHub.astro"
-import Tailwind from "@/components/icons/Tailwind.astro"
-import Link from "@/components/icons/Link.astro"
-import LinkButton from "@/components/LinkButton.astro"
-import ReactIcon from "@/components/icons/React.astro"
-import NodeIcon from "@/components/icons/Node.astro"
-//import MongoIcon from "@/components/icons/Mongo.astro"
-//import JavaScriptIcon from "@/components/icons/JavaScript.astro"
-//import TypeScriptIcon from "@/components/icons/TypeScript.astro"
+import GitHub from "@/components/icons/GitHub.astro";
+import Tailwind from "@/components/icons/Tailwind.astro";
+import Link from "@/components/icons/Link.astro";
+import ReactIcon from "@/components/icons/React.astro";
+import NodeIcon from "@/components/icons/Node.astro";
+import MongoIcon from "@/components/icons/MongoDb.astro";
+import JavaScriptIcon from "@/components/icons/JavaScript.astro";
+import TypeScriptIcon from "@/components/icons/TypeScript.astro";
+import FirebaseIcon from "@/components/icons/Firebase.astro";
+import ChakraIcon from "@/components/icons/Chackra.astro";
+import HTMLIcon from "@/components/icons/HTML.astro"
+import CSSIcon from "@/components/icons/CSS.astro" 
 
 const TAGS = {
   REACT: {
@@ -17,164 +20,146 @@ const TAGS = {
   },
   TAILWIND: {
     name: "Tailwind CSS",
-    class: "bg-gradient-to-r from-[#0ea5e9]/80 to-[#0ea5e9] text-white ring-1 ring-[#0ea5e9]/30",
+    class: "bg-gradient-to-r from-[#38BDF8]/80 to-[#0ea5e9] text-white ring-1 ring-[#0ea5e9]/30",
     icon: Tailwind,
   },
   NODE: {
     name: "Node.js",
-    class: "bg-gradient-to-r from-[#026e00]/80 to-[#026e00] text-white ring-1 ring-[#026e00]/30",
+    class: "bg-gradient-to-r from-[#68A063]/80 to-[#026e00] text-white ring-1 ring-[#026e00]/30",
     icon: NodeIcon,
   },
   MONGODB: {
     name: "MongoDB",
-    class: "bg-gradient-to-r from-[#13aa52]/80 to-[#13aa52] text-white ring-1 ring-[#13aa52]/30",
-    //icon: MongoIcon,
+    class: "bg-gradient-to-r from-[#47A248]/80 to-[#13aa52] text-white ring-1 ring-[#13aa52]/30",
+    icon: MongoIcon,
   },
   JAVASCRIPT: {
     name: "JavaScript",
-    class: "bg-gradient-to-r from-[#f7df1e]/90 to-[#f7df1e] text-black ring-1 ring-[#f7df1e]/30",
-    //icon: JavaScriptIcon,
+    class: "bg-gradient-to-r from-[#F7DF1E]/90 to-[#F7DF1E] text-black ring-1 ring-[#F7DF1E]/30",
+    icon: JavaScriptIcon,
   },
   TYPESCRIPT: {
     name: "TypeScript",
-    class: "bg-gradient-to-r from-[#3178c6]/80 to-[#3178c6] text-white ring-1 ring-[#3178c6]/30",
-    //icon: TypeScriptIcon,
+    class: "bg-gradient-to-r from-[#3178C6]/80 to-[#3178C6] text-white ring-1 ring-[#3178C6]/30",
+    icon: TypeScriptIcon,
   },
-}
+  FIREBASE: {
+    name: "Firebase",
+    class: "bg-gradient-to-r from-[#FFCA28]/80 to-[#FFA000] text-black ring-1 ring-[#FFA000]/30",
+    icon: FirebaseIcon,
+  },
+  CHAKRA: {
+    name: "Chakra",
+    class: "bg-gradient-to-r from-[#319795]/80 to-[#2C7A7B] text-white ring-1 ring-[#2C7A7B]/30",
+    icon: ChakraIcon,
+  },
+  HTML: {
+    name: "HTML",
+    class: "bg-gradient-to-r from-[#E34F26]/80 to-[#E44D26] text-white ring-1 ring-[#E44D26]/30",
+    icon: HTMLIcon,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-gradient-to-r from-[#1572B6]/80 to-[#2965F1] text-white ring-1 ring-[#2965F1]/30",
+    icon: CSSIcon,
+  },
+};;
 
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "PokeStore",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.NODE, TAGS.MONGODB],
-    readme: `# SVGL
-Una biblioteca moderna de logos SVG optimizados y accesibles.
-
-## Características principales:
-- +2000 logos SVG optimizados
-- Búsqueda instantánea
-- Descarga en un clic
-- Soporte para modo oscuro`,
-    codeSnippet: `import { SVGLogo } from 'svgl'
-
-export default function Brand() {
-  return <SVGLogo 
-    name="react" 
-    width={40} 
-    height={40} 
-  />
-}`
+    "PokeStore es una plataforma de comercio electrónico para comprar productos de Pokémon, con funciones de exploración, wishlist, reseñas y gestión administrativa de productos y pedidos.", 
+    github: "https://https://github.com/canosa92/PokeStore-project",
+    image: "/projects/612shots_so.png",
+    tags: [TAGS.REACT, TAGS.FIREBASE, TAGS.NODE, TAGS.MONGODB,TAGS.CHAKRA],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
-    description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.REACT, TAGS.JAVASCRIPT, TAGS.TAILWIND],
-    readme: `# AdventJS
-Mejora tus habilidades de programación con retos diarios.
-
-## Características:
-- 24 retos de programación
-- Soporte para JavaScript y TypeScript
-- Tests automatizados
-- Ranking global`,
-    codeSnippet: `function wrapGifts(gifts) {
-  if (gifts.length === 0) return []
-  const width = gifts[0].length + 2
-  return [
-    '*'.repeat(width),
-    ...gifts.map(gift => '*' + gift + '*'),
-    '*'.repeat(width)
-  ]
-}`
+    title: "Snake Game",
+    description: "Juego clásico de la serpiente implementado con JavaScript puro, HTML5 y CSS.Implementación de lógica de juego,detección de colisiones y puntuación dinamica.",
+    link: "https://canosa92.github.io/snake-game/",
+    github: "https://github.com/canosa92/snake-game/",
+    image: "/projects/78shots_so.png",
+    tags: [TAGS.JAVASCRIPT,TAGS.HTML,TAGS.CSS],
   },
-]
+  {
+    title: "Cronometro",
+    description: "Un cronómetro web moderno e interactivo desarrollado con HTML, CSS y TypeScript. Incluye animaciones fluidas, modos claro y oscuro, y un diseño responsivo optimizado para dispositivos móviles y pantallas de escritorio.",
+    link: "https://canosa92.github.io/cronometro/",
+    github: "https://www.github.com/canosa92/cronometro/",
+    image: "/projects/857shots_so.png",
+    tags: [TAGS.TYPESCRIPT],
+  },
+];
 ---
+<div class="flex flex-col gap-y-16">
+  {PROJECTS.map(({ image, title, description, tags, link, github }) => (
+  <article class="relative rounded-2xl bg-gradient-to-br from-gray-100 to-gray-50 shadow-lg transition-transform duration-500 hover:scale-[1.02] hover:shadow-xl dark:from-gray-800 dark:to-gray-900 p-6">
+    <div class="flex flex-col lg:flex-row gap-8">
+      {/* Imagen del proyecto */}
+      <div class="w-full lg:w-1/2 overflow-hidden rounded-xl shadow-md">
+        <img
+          src={image}
+          alt={title}
+          class="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
+          loading="lazy"
+        />
+      </div>
 
-<div class="flex flex-col gap-y-32">
-  {PROJECTS.map(({ image, title, description, tags, link, github, readme, codeSnippet }) => (
-    <article class="group relative flex flex-col space-y-8 md:flex-row md:space-x-16 md:space-y-0">
-      <div class="w-full md:w-1/2">
-        <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-100 to-gray-50 p-2 dark:from-gray-800 dark:to-gray-900">
-          {/* Contenedor principal con hover */}
-          <div class="relative aspect-video rounded-xl overflow-hidden">
-            {/* Imagen del proyecto */}
-            <img
-              alt={title}
-              class="h-full w-full object-cover object-top transition duration-700"
-              loading="lazy"
-              src={image}
-            />
-            
-            {/* Panel de información en hover */}
-            <div class="absolute inset-0 bg-gray-900/95 translate-y-full transition-transform duration-300 group-hover:translate-y-0 p-6 overflow-y-auto">
-              {/* Contenido del README */}
-              <div class="prose prose-invert prose-sm max-w-none mb-6">
-                <div class="font-mono text-gray-400 whitespace-pre-wrap">{readme}</div>
-              </div>
-              
-              {/* Fragmento de código */}
-              <div class="bg-gray-800 rounded-lg p-4 mb-6">
-                <pre class="text-sm text-gray-300 font-mono overflow-x-auto">
-                  <code>{codeSnippet}</code>
-                </pre>
-              </div>
-              
-              {/* Botones de acción */}
-              <div class="flex gap-4 absolute bottom-6 left-6 right-6">
-                {github && (
-                  <a 
-                    href={github}
-                    class="flex-1 flex items-center justify-center gap-2 bg-gray-800 hover:bg-gray-700 text-white rounded-lg px-4 py-2 transition-colors"
-                  >
-                    <GitHub class="size-5" />
-                    <span>Ver Código</span>
-                  </a>
+      {/* Contenido del proyecto */}
+      <div class="flex flex-col justify-between lg:w-1/2">
+        <div>
+          <h3 class="mb-4 text-3xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <p class="mb-6 text-base leading-relaxed text-gray-700 dark:text-gray-400">
+            {description}
+          </p>
+          {/* Tags del proyecto */}
+          <div class="flex flex-wrap gap-3">
+            {tags.map((tag) => (
+              <span
+                class={`inline-flex items-center gap-x-2 rounded-full px-4 py-1.5 text-sm font-semibold shadow-md ${tag.class}`}
+              >
+                {tag.icon && (
+                  <tag.icon
+                    class="w-5 h-5"
+                    aria-label={`Icono de ${tag.name}`}
+                  />
                 )}
-                {link && (
-                  <a 
-                    href={link}
-                    class="flex-1 flex items-center justify-center gap-2 bg-yellow-500 hover:bg-yellow-400 text-white rounded-lg px-4 py-2 transition-colors"
-                  >
-                    <Link class="size-5" />
-                    <span>Ver Demo</span>
-                  </a>
-                )}
-              </div>
-            </div>
+                {tag.name}
+              </span>
+            ))}
           </div>
         </div>
-      </div>
 
-      <div class="w-full md:w-1/2 md:max-w-lg">
-        <h3 class="relative mb-4 text-2xl font-bold text-gray-800 dark:text-gray-100">
-          <span class="relative">
-            {title}
-            <span class="absolute -bottom-2 left-0 h-0.5 w-0 bg-gradient-to-r from-yellow-500 to-yellow-300 transition-all duration-300 group-hover:w-full"></span>
-          </span>
-        </h3>
-
-        <div class="mb-6 flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <span 
-              class={`inline-flex items-center gap-x-2 rounded-full px-4 py-1.5 text-xs font-semibold shadow-lg transition-all duration-300 ${tag.class} hover:scale-105 hover:-translate-y-0.5`}
+        {/* Botones de acciones */}
+        <div class="mt-8 flex gap-4">
+          {github && (
+            <a
+              href={github}
+              class="flex items-center justify-center gap-2 bg-gray-800 hover:bg-gray-700 text-white rounded-lg px-4 py-3 text-sm font-medium transition-transform duration-300 focus:ring-4 focus:ring-gray-400"
+              aria-label="Ver Código en GitHub"
+              target="_blank"
             >
-              {tag.icon && <tag.icon class="size-4" />}
-              {tag.name}
-            </span>
-          ))}
+              <GitHub class="w-5 h-5" />
+              <span>Ver Código</span>
+            </a>
+          )}
+          {link && (
+            <a
+              href={link}
+              target="_blank"
+              class="flex items-center justify-center gap-2 bg-yellow-500 hover:bg-yellow-400 text-white rounded-lg px-4 py-3 text-sm font-medium transition-transform duration-300 focus:ring-4 focus:ring-yellow-300"
+              aria-label="Ver Demo del Proyecto"
+            >
+              <Link class="w-5 h-5" />
+              <span>Ver Demo</span>
+            </a>
+          )}
         </div>
-
-        <p class="mb-8 text-gray-700 dark:text-gray-400 leading-relaxed [text-wrap:balance]">
-          {description}
-        </p>
       </div>
-    </article>
-  ))}
+    </div>
+  </article>
+))}
 </div>

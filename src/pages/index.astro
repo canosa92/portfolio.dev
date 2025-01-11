@@ -20,7 +20,17 @@ import TitleSection from "@/components/TitleSection.astro"
       <Hero/>
     </SectionContainer>
 
-    <div class="space-y-20"> {/* Espaciado más moderado */}
+    <div class="space-y-20"> 
+      
+      <SectionContainer id="experiencia">
+        <TitleSection>
+          <Briefcase class="size-8" />
+          Experiencia laboral
+        </TitleSection>
+        <Experience />
+      </SectionContainer>
+      
+      {/* Espaciado más moderado */}
       <SectionContainer id="proyectos">
         <TitleSection>
           <CodeIcon class="size-7" />
@@ -29,13 +39,6 @@ import TitleSection from "@/components/TitleSection.astro"
         <Projects />
       </SectionContainer>
 
-      <SectionContainer id="experiencia">
-        <TitleSection>
-          <Briefcase class="size-8" />
-          Experiencia laboral
-        </TitleSection>
-        <Experience />
-      </SectionContainer>
 
       <SectionContainer id="sobre-mi">
         <TitleSection>

@@ -1,16 +1,17 @@
 ---
-import LinkInline from "./LinkInline.astro"
+import LinkInline from "./LinkInline.astro";
 
 interface Props {
-  title: string
-  company: string
-  description: string
-  link?: string
-  date: string
+  title: string;
+  company: string;
+  description: string[];
+  link?: string;
+  date: string;
 }
 
-const { title, company, description, link, date } = Astro.props
+const { title, company, description, link, date } = Astro.props;
 ---
+
 <div class="relative mx-8 pb-12">
   <div class="absolute left-0 top-0 h-full w-0.5 bg-gradient-to-b from-yellow-500 to-yellow-200 dark:from-yellow-400 dark:to-yellow-600"></div>
   
@@ -29,7 +30,11 @@ const { title, company, description, link, date } = Astro.props
 
     <div class="md:col-span-3">
       <div class="prose prose-gray dark:prose-invert">
-        <p class="leading-relaxed text-gray-700 dark:text-gray-300">{description}</p>
+        <ul class="list-disc pl-5 leading-relaxed text-gray-700 dark:text-gray-300 space-y-2">
+          {description.map((line) => (
+            <li>{line}</li>
+          ))}
+        </ul>
         {link && (
           <LinkInline 
             href={link}
