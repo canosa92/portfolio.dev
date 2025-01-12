@@ -1,114 +1,80 @@
 ---
+// Importaciones necesarias
 const personalImageAlt = "Adrian Canosa"
-import Badge from "@/components/Badge.astro"
 import LinkedInIcon from "@/components/icons/LinkedIn.astro"
 import MailIcon from "@/components/icons/Mail.astro"
 import SocialPill from "@/components/SocialPill.astro"
 import GithubIcon from "@/components/icons/GitHub.astro"
 ---
 
-<div class="relative max-w-xl mx-auto">
-  <!-- Imagen y estado -->
-  <div class="flex gap-4 items-center mb-6">
-    <img
-      class="rounded-full shadow-lg w-16 h-16"
-      alt={personalImageAlt}
-      src="../public/adrian.png"
-    />
-    <a 
-      href="https://linkedin.com/in/adrian-canosa"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="flex items-center transition transform hover:scale-105"
-    >
-      <Badge>Disponible para tus proyectos</Badge>
-    </a>
-  </div>
-
-  <!-- Título y descripción -->
-  <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
-    Hola, soy Adrián Canosa
-  </h1>
-  <p class="mt-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-    <strong class="text-yellow-500 dark:text-yellow-300 font-semibold">
-      Desarrollador y programador FullStack
-    </strong> con experiencia en el desarrollo de aplicaciones web utilizando tecnologías como 
-    <strong class="text-yellow-500 dark:text-yellow-300 font-semibold">
-      ASTRO, TYPESCRIPT, FIREBASE y el stack MERN
-    </strong>.
-  </p>
-
-  <!-- Navegación de redes sociales -->
-  <nav class="flex flex-wrap gap-4 mt-8">
-    <SocialPill href="mailto:adrian.canosa1992@gmail.com">
-      <MailIcon class="w-4 h-4" />
-      adrian.canosa1992@gmail.com
-    </SocialPill>
-    <SocialPill href="https://linkedin.com/in/adrian-canosa">
-      <LinkedInIcon class="w-4 h-4" />
-      LinkedIn
-    </SocialPill>
-    <SocialPill href="https://github.com/canosa92">
-      <GithubIcon class="w-4 h-4" />
-      Github
-    </SocialPill>
-  </nav>
-
-  <!-- Indicador de scroll -->
-  <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2">
-    <div class="flex flex-col items-center animate-bounce">
-      <p class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
-        Explora mi trabajo
-      </p>
-      <svg 
-        xmlns="http://www.w3.org/2000/svg" 
-        class="w-6 h-6 text-gray-500 dark:text-gray-400"
-        fill="none" 
-        viewBox="0 0 24 24" 
-        stroke="currentColor"
-      >
-        <path 
-          stroke-linecap="round" 
-          stroke-linejoin="round" 
-          stroke-width="2" 
-          d="M19 14l-7 7m0 0l-7-7m7 7V3"
+<section class="relative py-16 max-w-6xl mx-auto">
+  <div class="grid gap-12 md:grid-cols-5 items-center">
+    <!-- Imagen y redes sociales -->
+    <div class="md:col-span-2 flex flex-col items-center space-y-6">
+      <div class="relative">
+        <img
+          class="rounded-full w-40 sm:w-48 aspect-square object-cover shadow-2xl 
+                 ring-4 ring-yellow-300 dark:ring-yellow-500 
+                 transform transition hover:scale-105 duration-300"
+          alt={personalImageAlt}
+          src="../public/adrian.png"
         />
-      </svg>
+        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-yellow-500/20 to-transparent"></div>
+      </div>
+      
+      <nav class="flex gap-6 mt-8">
+        <SocialPill 
+          href="mailto:adrian.canosa1992@gmail.com" 
+          class="transform transition-all duration-300 hover:scale-110 hover:text-yellow-500"
+        >
+          <MailIcon class="w-7 h-7" />
+        </SocialPill>
+        <SocialPill 
+          href="https://linkedin.com/in/adrian-canosa" 
+          class="transform transition-all duration-300 hover:scale-110 hover:text-blue-500"
+        >
+          <LinkedInIcon class="w-7 h-7" />
+        </SocialPill>
+        <SocialPill 
+          href="https://github.com/canosa92" 
+          class="transform transition-all duration-300 hover:scale-110 hover:text-gray-800 dark:hover:text-gray-200"
+        >
+          <GithubIcon class="w-7 h-7" />
+        </SocialPill>
+      </nav>
+    </div>
+
+    <!-- Título y descripción -->
+    <div class="md:col-span-3 space-y-6">
+      <div class="prose prose-lg dark:prose-invert">
+        <h1 class="text-4xl sm:text-5xl font-black tracking-tight text-gray-800 dark:text-white
+                   bg-gradient-to-r from-yellow-500 to-yellow-300 dark:from-yellow-300 dark:to-yellow-500 
+                   bg-clip-text text-transparent animate-gradient">
+          Hola, soy Adrián Canosa
+        </h1>
+        <p class="mt-6 text-lg sm:text-xl leading-relaxed text-gray-700 dark:text-gray-300">
+          <span class="font-bold text-yellow-600 dark:text-yellow-400">
+            Desarrollador y programador FullStack
+          </span> 
+          con experiencia en la creación de aplicaciones web utilizando tecnologías modernas como
+          <span class="font-bold text-yellow-600 dark:text-yellow-400">
+            ASTRO, TYPESCRIPT, FIREBASE y el stack MERN.
+          </span>
+        </p>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
 <style>
-  @keyframes scroll-bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(10px);
-    }
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
-
-  .animate-bounce {
-    animation: scroll-bounce 2s infinite;
+  
+  .animate-gradient {
+    background-size: 200% auto;
+    animation: gradient 4s ease infinite;
   }
 </style>
-
-<script>
-  // Smooth scroll cuando se hace clic en el indicador
-  document.querySelector('.animate-bounce')?.addEventListener('click', () => {
-    window.scrollTo({
-      top: window.innerHeight,
-      behavior: 'smooth'
-    });
-  });
-
-  // Ocultar el indicador durante el scroll
-  window.addEventListener('scroll', () => {
-    const scrollIndicator = document.querySelector('.animate-bounce');
-    if (window.scrollY > 100) {
-      scrollIndicator?.classList.add('opacity-0', 'pointer-events-none');
-    } else {
-      scrollIndicator?.classList.remove('opacity-0', 'pointer-events-none');
-    }
-  });
-</script>
