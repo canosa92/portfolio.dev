@@ -7,56 +7,62 @@ import SocialPill from "@/components/SocialPill.astro"
 import GithubIcon from "@/components/icons/GitHub.astro"
 ---
 
-<div class="relative max-w-xl">
-  <div class="flex gap-4 mb-4">
+<div class="relative max-w-xl mx-auto">
+  <!-- Imagen y estado -->
+  <div class="flex gap-4 items-center mb-6">
     <img
-      class="rounded-full shadow-lg size-16"
+      class="rounded-full shadow-lg w-16 h-16"
       alt={personalImageAlt}
       src="../public/adrian.png"
     />
-    
-       <a href="https://linkedin.com/in/adrian-canosa"
+    <a 
+      href="https://linkedin.com/in/adrian-canosa"
       target="_blank"
-      rel="noopener"
-      class="flex items-center transition md:justify-center md:hover:scale-105"
+      rel="noopener noreferrer"
+      class="flex items-center transition transform hover:scale-105"
     >
       <Badge>Disponible para tus proyectos</Badge>
     </a>
   </div>
-  <h1
-    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
-  >
+
+  <!-- Título y descripción -->
+  <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
     Hola, soy Adrián Canosa
   </h1>
-  <p
-    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
-  >
-    <strong>Desarrollador y programador FullStack</strong> 
-    con experiencia en el desarrollo de aplicaciones web utilizando
-    tecnologias como <strong>ASTRO, TYPESCRIPT, FIREBASE y el stack MERN</strong>.
+  <p class="mt-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+    <strong class="text-yellow-500 dark:text-yellow-300 font-semibold">
+      Desarrollador y programador FullStack
+    </strong> con experiencia en el desarrollo de aplicaciones web utilizando tecnologías como 
+    <strong class="text-yellow-500 dark:text-yellow-300 font-semibold">
+      ASTRO, TYPESCRIPT, FIREBASE y el stack MERN
+    </strong>.
   </p>
+
+  <!-- Navegación de redes sociales -->
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href="mailto:adrian.canosa1992@gmail.com">
-      <MailIcon class="size-4" />
+      <MailIcon class="w-4 h-4" />
       adrian.canosa1992@gmail.com
     </SocialPill>
     <SocialPill href="https://linkedin.com/in/adrian-canosa">
-      <LinkedInIcon class="size-4" />
+      <LinkedInIcon class="w-4 h-4" />
       LinkedIn
     </SocialPill>
-    <SocialPill href="https://github.com/canosa92"> 
-      <GithubIcon class="size-4"/>
+    <SocialPill href="https://github.com/canosa92">
+      <GithubIcon class="w-4 h-4" />
       Github
     </SocialPill>
   </nav>
 
-  <!-- Scroll Indicator -->
-  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 transform">
-    <div class="flex flex-col items-center mt-20 animate-bounce">
-      <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Explora mi trabajo</p>
+  <!-- Indicador de scroll -->
+  <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2">
+    <div class="flex flex-col items-center animate-bounce">
+      <p class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
+        Explora mi trabajo
+      </p>
       <svg 
         xmlns="http://www.w3.org/2000/svg" 
-        class="h-6 w-6 text-gray-600 dark:text-gray-400"
+        class="w-6 h-6 text-gray-500 dark:text-gray-400"
         fill="none" 
         viewBox="0 0 24 24" 
         stroke="currentColor"
@@ -88,7 +94,7 @@ import GithubIcon from "@/components/icons/GitHub.astro"
 </style>
 
 <script>
-  // Smooth scroll cuando se hace click en el indicador
+  // Smooth scroll cuando se hace clic en el indicador
   document.querySelector('.animate-bounce')?.addEventListener('click', () => {
     window.scrollTo({
       top: window.innerHeight,
@@ -96,7 +102,7 @@ import GithubIcon from "@/components/icons/GitHub.astro"
     });
   });
 
-  // Ocultar el indicador cuando se hace scroll
+  // Ocultar el indicador durante el scroll
   window.addEventListener('scroll', () => {
     const scrollIndicator = document.querySelector('.animate-bounce');
     if (window.scrollY > 100) {
