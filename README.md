@@ -1,7 +1,7 @@
 # 👨🏻‍💻 Porfolio para programadores y desarrolladores
 
 <div align="center">
-<a href="https://www.adrian-canosa.netlify.com">
+<a href="https://www.adrian-canosa.netlify.app">
 <img src="./public/image.png">
 </a>
 <p></p>
